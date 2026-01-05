@@ -24,6 +24,8 @@
 \usepackage{xstring}
 \usepackage{newunicodechar}
 \usepackage{amssymb}
+\usepackage[normalem]{ulem}
+
 
 % Unicode character mappings for the imported dataset table
 \newunicodechar{∗}{*}
@@ -141,13 +143,20 @@ Machine learning has become a core component of modern software systems. It is u
 
 The field of adversarial machine learning (AML) emerged to study such vulnerabilities and to develop defenses against them. Over the past decade, researchers have demonstrated a range of attacks, including small input perturbations that cause image misclassification, poisoning strategies that implant hidden backdoors during training, and privacy attacks that extract sensitive information through carefully designed queries. In response, a substantial body of work has proposed defenses intended to improve robustness, privacy, or resistance to adversarial manipulation.
 
-Despite this progress, a central question remains: \textbf{to what extent do the assumptions underlying academic AML research align with the realities of deployed systems?}
+\sout{Despite this progress, a central question remains: \textbf{to what extent do the assumptions underlying academic AML research align with the realities of deployed systems?}}
 
 In 2022, Apruzzese and colleagues published the analysis ``Real Attackers Don't Compute Gradients''~\citep{apruzzese2022real}, which highlighted a persistent gap between academic AML research and practical security concerns. Their core observation was that much of the literature assumes attackers can compute gradients of target models, an assumption that requires access to model architectures and parameters rarely available in real-world settings. In practice, attackers more often rely on simpler strategies, such as basic input manipulation or exploitation of system-level weaknesses, when these are sufficient to achieve their objectives.
 
-This systematic review asks: \textit{how has the adversarial machine learning research community responded since this critique?}
+\sout{This systematic review asks: \textit{how has the adversarial machine learning research community responded since this critique?}}
 
-To address this question, we analyze 454 adversarial ML papers published between 2022 and 2025 at four major security venues: ACM CCS (118 papers), IEEE S\&P (79 papers), NDSS (49 papers), and USENIX Security (208 papers). Each paper is evaluated along dimensions directly related to practical relevance, including threat model assumptions, computational requirements, validation methodology, and consideration of deployment constraints.
+Based on the Aptuzzese work, we are conducting this systematic review to answer the following questions:
+\begin{itemize}
+    \item RQ1: To what extent has adversarial ML research addressed practical deployment constraints since the 2023 Apruzzese critique?
+    \item RQ2: What patterns distinguish research that bridges the theory-practice gap from work that remains laboratory-focused?
+    \item RQ3: How do emerging threats (LLMs, foundation models) affect the alignment between academic research and operational security needs?
+\end{itemize}
+
+To address these questions, we analyze 454 adversarial ML papers published between 2022 and 2025 at four major security venues: ACM CCS (118 papers), IEEE S\&P (79 papers), NDSS (49 papers), and USENIX Security (208 papers). Each paper is evaluated along dimensions directly related to practical relevance, including threat model assumptions, computational requirements, validation methodology, and consideration of deployment constraints.
 
 Our findings indicate that the theory--practice gap identified in earlier work remains substantial. Although recent research has advanced understanding of adversarial threats and defenses, many studies continue to prioritize novelty and theoretical performance over alignment with deployment realities, including cost and operational constraints. This review characterizes current research practices across venues, identifies recurring patterns, and offers recommendations aimed at improving the practical impact of adversarial ML research.
 
